@@ -2,9 +2,15 @@
     color: #143466;
 }
 
+.board-row {
+    display: flex;
+    flex-direction: row;
+}
+
 .square {
     background: #fff;
     border: 1px solid #999;
+    /* float: left; */
     font-size: 24px;
     font-weight: bold;
     line-height: 34px;
@@ -16,7 +22,8 @@
     width: 34px;
   }
   
-  .board-row:after {
+  /* .board-row:after {
+    clear: both;
     content: '';
     display: table;
-  }
+  } */
