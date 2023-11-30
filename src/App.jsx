@@ -1,5 +1,6 @@
 import Game from "./components/TicTacToe";
 import SearchThink from "./components/SearchThink";
+import ImpureTeaSet from "./components/ImpureTeaSet";
 
 const App = () => {
     return (
@@ -9,6 +10,7 @@ const App = () => {
             <hr />
             <h1>Thinking in React</h1>
             <SearchThink/>
+            <ImpureTeaSet/>
         </div>
     )
 }
