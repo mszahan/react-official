@@ -2,6 +2,9 @@
 function Parent ({children}) {
     return (
         <div className="parent">
+            <hr />
+            <p>Passing jsx or component through children props</p>
+            <hr />
             <h4>This is from the parent</h4>
             {children}
         </div>

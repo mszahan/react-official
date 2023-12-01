@@ -1,6 +1,9 @@
 function Avatar ({person, size, color, height}) {
     return (
         <div>
+            <hr />
+            <p>Sprading props to reduce the repeataion</p>
+            <hr />
             <p>name: {person.name}</p>
             <p>age: {person.age}</p>
             <p>role: {person.role}</p>

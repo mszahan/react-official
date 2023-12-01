@@ -7,6 +7,9 @@ export function Profile () {
 export default function Gallery() {
     return (
         <section>
+            <hr />
+            <p>Used two type of export</p>
+            <hr />
             <h1>Great Scientist</h1>
             <Profile/>
         </section>
