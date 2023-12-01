@@ -1,6 +1,7 @@
 import { Profile } from "./Gallery";
 import Gallery from "./Gallery";
 import Main from "./SpreadProps";
+import Continer from "./PassingChildren";
 
 function Ui () {
     return (
@@ -8,6 +9,8 @@ function Ui () {
             <Gallery/>
             <Profile/>
             <Main/>
+            <Continer/>
+
         </div>
     )
 }

@@ -33,7 +33,7 @@ function Main () {
             person={person}
             size='100'
             color='red'
-            height='25'
+            height={75}
             />
         </div>
     )
