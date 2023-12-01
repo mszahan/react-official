@@ -1,3 +1,8 @@
+body {
+  padding: 0px 10px;
+}
+
+
 .app > h1 {
     color: #143466;
 }
@@ -28,6 +33,28 @@
     display: table;
   } */
 
-.game {
+/* .game {
   display: flex;
+} */
+
+.main-nav > ul {
+  display: flex;
+  flex-flow: row wrap;
+  gap: 2rem;
+  justify-content: flex-end;
+}
+
+.main-nav ul li {
+  list-style-type: none;
+  color: #124e5f;
+  font-size: 1.25rem;
+}
+
+.main-nav ul li a{
+  text-decoration: none;
+  color: black;
+}
+
+.main-nav ul li a:hover{
+  color: #61dafb;
 }

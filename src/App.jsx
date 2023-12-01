@@ -1,18 +1,19 @@
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Game from "./components/TicTacToe";
 import SearchThink from "./components/SearchThink";
-import ImpureTeaSet from "./components/ImpureTeaSet";
+import Nav from "./components/Nav";
 
 const App = () => {
     return (
-        <div className="app">
-            <h1>Tic Tac Toe</h1>
-            <Game/>
-            <hr />
-            <h1>Thinking in React</h1>
-            <SearchThink/>
-            <ImpureTeaSet/>
-        </div>
+        <BrowserRouter>
+            <Nav/>
+            <Routes>
+                <Route path="/" element={<Game/>}/>
+                <Route path="/filter" element={<SearchThink/>}/>
+            </Routes>
+        </BrowserRouter>
     )
+        
 }
 
 export default App;
