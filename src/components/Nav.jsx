@@ -6,6 +6,7 @@ function Nav () {
             <ul>
                 <li> <Link to='/'> Home </Link> </li>
                 <li> <Link to='/filter'> Filter </Link> </li>
+                <li> <Link to='/ui'> Ui </Link> </li>
             </ul>
         </nav>
     )

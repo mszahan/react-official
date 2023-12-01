@@ -1,9 +1,13 @@
+import { Profile } from "./Gallery";
+import Gallery from "./Gallery";
 
-
-function UI () {
+function Ui () {
     return (
         <div>
-            hola
+            <Gallery/>
+            <Profile/>
         </div>
     )
 }
+
+export default Ui;
