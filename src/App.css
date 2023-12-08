@@ -58,3 +58,49 @@ body {
 .main-nav ul li a:hover{
   color: #61dafb;
 }
+
+.infocard {
+  text-align: center;
+  width: 600px;
+  margin: 0 auto;
+  border: 1px solid #124e5f;
+  padding: 30px;
+  border-radius: 10px;
+}
+
+
+
+.buttons {
+  margin-top: 20px;
+  display: flex;
+  gap: 100px;
+  justify-content: center;
+}
+
+.btn {
+  border-radius: 10px;
+  border: 0;
+  padding: 10px;
+  background-color: #124e5f;
+  color: white;
+}
+
+ .btn:hover{
+  background-color: white;
+  color: #124e5f;
+  border: 1px solid #124e5f;
+}
+
+.btn:disabled{
+  background-color: white;
+  color: #124e5f;
+  border: 1px solid #124e5f;
+}
+
+.content {
+  margin: 10px;
+}
+
+.image img {
+  border-radius: 10px;
+}

@@ -27,31 +27,44 @@ export default function InfoCard () {
 
     return (
         <div className="infocard">
+            <div className="buttons">
+                <button 
+                className="btn" 
+                onClick={handlePreviousClick}
+                disabled={index === 0} 
+                >
+                    Previous
+                </button>
 
-        <button 
-        className="next" 
-        onClick={handlePreviousClick}
-        disabled={index === 0} 
-        >
-            Previous
-        </button>
-        <button 
-        className="next" 
-        onClick={handleNextClick}
-        disabled={index === sculptureList.length -1} 
-        >
-            Next
-        </button>
+                <button 
+                className="btn" 
+                onClick={handleNextClick}
+                disabled={index === sculptureList.length -1} 
+                >
+                    Next
+                </button>
 
-        <h2><span>{sculpture.name} by {sculpture.artist} </span></h2>
-        <h3>({index + 1} of {sculptureList.length})</h3>
+            </div>
 
-        <button onClick={handleMoreClick}>
-            {showMore ? 'Hide' : 'Show'} details
-        </button>
+            <div className="content">
+                <h2><span>{sculpture.name} by {sculpture.artist} </span></h2>
+                <h3>({index + 1} of {sculptureList.length})</h3>
 
-        {showMore && <p>{sculpture.description}</p>}
-        <img src={sculpture.url} alt={sculpture.alt} />
+                <button onClick={handleMoreClick} className="btn">
+                    {showMore ? 'Hide' : 'Show'} details
+                </button>
+
+                {showMore && <p>{sculpture.description}</p>}
+
+            </div>
+
+
+            <div className="image">
+                <img src={sculpture.url} alt={sculpture.alt} />
+            </div>
+
+
+
 
 
         </div>
