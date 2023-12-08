@@ -3,10 +3,10 @@ export default function NoState () {
 
         const [inum, setInum] = useState(0)
 
-    // let initialNum = 0
+    let initialNum = 0
 
     function handleClick() {
-        // initialNum = initialNum + 1
+        initialNum = initialNum + 1
         setInum(inum + 1)
         console.log(inum)
     }
@@ -16,6 +16,10 @@ export default function NoState () {
             <div>
                 {inum}
             </div>
+            <div>
+                {initialNum}
+            </div>
+
             <button onClick={handleClick}>
                 increase the number
 
