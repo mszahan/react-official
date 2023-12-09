@@ -92,9 +92,8 @@ body {
 }
 
 .btn:disabled{
-  background-color: white;
-  color: #124e5f;
-  border: 1px solid #124e5f;
+  background-color: #9eaaad;
+
 }
 
 .content {
