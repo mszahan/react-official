@@ -9,7 +9,7 @@ export default function SanpShot() {
             <button onClick={() => {
                 setNum(num + 1);
                 setNum(num + 1);
-                setNum(num + 3);
+                setNum(num + 1);
             }}>
                 +3
             </button>

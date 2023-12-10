@@ -2,6 +2,7 @@ import ToolBar from "./Event";
 import NoState from "./NoState";
 import InfoCard from "./InfoCard";
 import SanpShot from "./SnapShot";
+import Que from "./Que";
 
 function Interact () {
     return (
@@ -11,6 +12,7 @@ function Interact () {
             <NoState/>
             <InfoCard/>
             <SanpShot/>
+            <Que/>
         </div>
     )
 }
