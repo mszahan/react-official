@@ -3,6 +3,7 @@ import NoState from "./NoState";
 import InfoCard from "./InfoCard";
 import SanpShot from "./SnapShot";
 import Que from "./Que";
+import ObjectState from "./ObjectState";
 
 function Interact () {
     return (
@@ -13,6 +14,7 @@ function Interact () {
             <InfoCard/>
             <SanpShot/>
             <Que/>
+            <ObjectState/>
         </div>
     )
 }
