@@ -189,12 +189,123 @@ function SingleForm () {
     )
 }
 
+
+function NestedForm() {
+    const [person, setPerson] = useState({
+        name:'Alex',
+        artwork: {
+            title: 'Blue Nana',
+            city: 'Hamburg',
+            image: 'https://i.imgur.com/Sd1AgUOm.jpg',
+        }
+    })
+
+    function handleNameChange(e) {
+        setPerson({
+            ...person,
+            name:e.target.value
+        });
+    }
+
+
+    function handleTitleChange(e) {
+        setPerson({
+            ...person,
+            artwork: {
+                ...person.artwork,
+                title: e.target.value
+            }
+        });
+    }
+
+
+    function handleCityChange(e) {
+        setPerson({
+            ...person,
+            artwork: {
+                ...person.artwork,
+                city: e.target.value
+            }
+        });
+    }
+
+
+    function handleImageChange(e) {
+        setPerson({
+            ...person,
+            artwork: {
+                ...person.artwork,
+                image: e.target.value
+            }
+        })
+    }
+
+    return (
+        <div className="nextedForm">
+            <h1>Updating the value in nested objects</h1>
+
+            <form action="">
+
+            <label htmlFor="">
+                Name:
+                <input
+                type="text"
+                value={person.name}
+                onChange={handleNameChange}
+                />
+            </label>
+
+            
+            <label htmlFor="">
+                Title:
+                <input
+                type="text"
+                value={person.artwork.title}
+                onChange={handleTitleChange}
+                />
+            </label>
+
+            <label htmlFor="">
+                City:
+                <input
+                type="text"
+                value={person.artwork.city}
+                onChange={handleCityChange}
+                />
+            </label>
+
+            <label htmlFor="">
+                Image:
+                <input
+                type="text"
+                value={person.artwork.image}
+                onChange={handleImageChange}
+                />
+            </label>
+
+            </form>
+
+            <div className="artwork">
+                <p> name: {person.name} </p>
+                <p> Artwork title: {person.artwork.title} </p>
+                <p> Artwork City: {person.artwork.city} </p>
+                <img src={person.artwork.image} alt="" />
+            </div>
+
+
+        </div>
+    )
+
+
+}
+
 export default function ObjectState () {
     return (
         <div className="objectstate">
             <MovingDot/>
             <Form/>
             <SingleForm/>
+            <NestedForm/>
         </div>
     )
 }
