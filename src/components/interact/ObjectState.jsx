@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useImmer } from "use-immer";
 
 function MovingDot () {
     const [position, setPosition] = useState( {
@@ -299,6 +300,102 @@ function NestedForm() {
 
 }
 
+function NestedImerForm() {
+    const [person, setPerson] = useImmer({
+        name:'Alex',
+        artwork: {
+            title: 'Blue Nana',
+            city: 'Hamburg',
+            image: 'https://i.imgur.com/Sd1AgUOm.jpg',
+        }
+    })
+
+    function handleNameChange(e) {
+        setPerson(d => {
+            d.name = e.target.value
+        });
+    }
+
+
+    function handleTitleChange(e) {
+        setPerson(draft => {
+            draft.artwork.title = e.target.value
+        });
+    }
+
+
+    function handleCityChange(e) {
+        setPerson(draft => {
+            draft.artwork.city = e.target.value
+        });
+    }
+
+
+    function handleImageChange(e) {
+        setPerson(draft => {
+            draft.artwork.image = e.target.value
+        })
+    }
+
+    return (
+        <div className="nextedForm">
+            <h1>Updating the value in nested objects with Immer library</h1>
+
+            <form action="">
+
+            <label htmlFor="">
+                Name:
+                <input
+                type="text"
+                value={person.name}
+                onChange={handleNameChange}
+                />
+            </label>
+
+            
+            <label htmlFor="">
+                Title:
+                <input
+                type="text"
+                value={person.artwork.title}
+                onChange={handleTitleChange}
+                />
+            </label>
+
+            <label htmlFor="">
+                City:
+                <input
+                type="text"
+                value={person.artwork.city}
+                onChange={handleCityChange}
+                />
+            </label>
+
+            <label htmlFor="">
+                Image:
+                <input
+                type="text"
+                value={person.artwork.image}
+                onChange={handleImageChange}
+                />
+            </label>
+
+            </form>
+
+            <div className="artwork">
+                <p> name: {person.name} </p>
+                <p> Artwork title: {person.artwork.title} </p>
+                <p> Artwork City: {person.artwork.city} </p>
+                <img src={person.artwork.image} alt="" />
+            </div>
+
+
+        </div>
+    )
+
+
+}
+
 export default function ObjectState () {
     return (
         <div className="objectstate">
@@ -306,6 +403,7 @@ export default function ObjectState () {
             <Form/>
             <SingleForm/>
             <NestedForm/>
+            <NestedImerForm/>
         </div>
     )
 }
