@@ -199,7 +199,38 @@ function InsList() {
     )
 }
 
+const initialList = [
+    {id: 0, title: 'Reddit'},
+    {id: 1, title: 'Facebook'},
+    {id: 2, title: 'Twitter'},
+    {id: 3, title: 'Linkedin'}
+]
 
+function ReverseList() {
+    const [list, setList] = useState(initialList);
+
+    function handleClick() {
+        const nextList = [...list];
+        nextList.reverse();
+        setList(nextList);
+    }
+
+    return (
+        <div className="reverse">
+            <button onClick={handleClick}>
+                Reverse
+            </button>
+
+            <div className="reverese-conten">
+                <ul>
+                    {list.map(social => (
+                        <li key={social.id}> {social.title} </li>
+                    ))}
+                </ul>
+            </div>
+        </div>
+    )
+}
 
 
 export default function ArrayObject(){
@@ -209,6 +240,7 @@ export default function ArrayObject(){
             {/* <ShapeEditor/> */}
             <CounterList/>
             <InsList/>
+            <ReverseList/>
         </div>
     )
 }
