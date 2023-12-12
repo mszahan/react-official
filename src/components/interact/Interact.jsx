@@ -4,6 +4,7 @@ import InfoCard from "./InfoCard";
 import SanpShot from "./SnapShot";
 import Que from "./Que";
 import ObjectState from "./ObjectState";
+import ArrayObject from "./ArrayObject";
 
 function Interact () {
     return (
@@ -15,6 +16,7 @@ function Interact () {
             <SanpShot/>
             <Que/>
             <ObjectState/>
+            <ArrayObject/>
         </div>
     )
 }
