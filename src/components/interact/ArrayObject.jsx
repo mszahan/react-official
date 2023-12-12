@@ -152,6 +152,55 @@ function CounterList() {
     )
 }
 
+let nId = 3;
+const initialArtists = [
+    {id:0, name:'Alex'},
+    {id: 1, name:'Rebecca'},
+    {id:2, name:'Nancy'},
+];
+
+function InsList() {
+    const [name, setName] = useState('');
+    const [artists, setArtists] = useState(initialArtists);
+
+    function handleClick(){
+        const insertAt = 1; // cloud be any index
+        const nextArtists = [
+            // Items before the insertion point:
+            ...artists.slice(0, insertAt),
+            // New item:
+            {id:nId++, name:name},
+            ...artists.slice(insertAt)
+        ];
+
+        setArtists(nextArtists);
+        setName('')
+    }
+
+    return (
+        <div className="insert">
+            <h1>Inserting the element in array</h1>
+
+            <input
+            value={name}
+            onChange={e => setName(e.target.value)}
+            type="text" />
+
+            <button onClick={handleClick}>
+                Insert
+            </button>
+
+            <ul>
+                {artists.map(artist => (
+                    <li key={artist.id}> {artist.name} </li>
+                ))}
+            </ul>
+        </div>
+    )
+}
+
+
+
 
 export default function ArrayObject(){
     return (
@@ -159,6 +208,7 @@ export default function ArrayObject(){
             <List/>
             {/* <ShapeEditor/> */}
             <CounterList/>
+            <InsList/>
         </div>
     )
 }
