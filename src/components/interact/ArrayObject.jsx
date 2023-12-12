@@ -232,6 +232,85 @@ function ReverseList() {
     )
 }
 
+const bucketList = [
+    {id: 0, title:'Babylon', seen:false},
+    {id: 1, title: 'Black Book', seen:false},
+    {id: 2, title: 'Legend', seen:true}
+];
+
+function BucketList() {
+    const [myList, setMyList] = useState(bucketList);
+    const [yourList, setYourList] = useState(bucketList);
+
+
+    function handleToggleMyList(artworkId, nextSeen) {
+        setMyList(myList.map(artwork => {
+            if (artwork.id === artworkId) {
+                return {...artwork, seen:nextSeen};
+            } else {
+                //
+                return artwork;
+            }
+
+        }))
+    }
+
+
+    function handleToggleYourList(artworkId, nextSeen) {
+        setYourList(yourList.map(artwork => {
+            if (artwork.id === artworkId){
+                return {...artwork, seen:nextSeen};
+            } else {
+                return artwork;
+            }
+        }))
+    }
+
+    return (
+        <div className="bucketlist">
+            <h1> changing the objecst within the array </h1>
+            <ItemList
+            artworks={myList}
+            onToggle={handleToggleMyList}
+            />
+
+            <ItemList
+            artworks={yourList}
+            onToggle={handleToggleYourList}
+            />
+
+
+        </div>
+    )
+
+
+}
+
+function ItemList({artworks, onToggle}) {
+    return (
+        <ul>
+            {artworks.map(artwork => (
+                <li key={artwork.id}>
+                    <label htmlFor="">
+                        <input
+                        checked={artwork.seen}
+                        onChange={e => {
+                            onToggle(
+                                artwork.id,
+                                e.target.checked
+                            );
+                        }}
+                        type="checkbox" 
+                        
+                        />
+                        {artwork.title}
+                    </label>
+                </li>
+            ))}
+        </ul>
+    )
+}
+
 
 export default function ArrayObject(){
     return (
@@ -241,6 +320,7 @@ export default function ArrayObject(){
             <CounterList/>
             <InsList/>
             <ReverseList/>
+            <BucketList/>
         </div>
     )
 }
