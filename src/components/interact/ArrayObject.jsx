@@ -31,7 +31,20 @@ function List(){
 
                     <ul>
                         {artists.map(artist => (
-                            <li key={artist.id}> {artist.name} </li>
+                            <div>
+                            <li key={artist.id}> {artist.name}{' '}
+                                <button
+                                onClick={() => {
+                                    setArtists(
+                                        artists.filter(a => a.id !== artist.id)
+                                        
+                                        )
+                                }}
+                                >
+                                    delete</button>
+                            </li>
+
+                            </div>
                         ))}
                     </ul>
             </div>
