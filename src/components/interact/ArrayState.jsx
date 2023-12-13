@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useImmer } from "use-immer";
 
 let nextId = 0;
 
@@ -311,8 +312,61 @@ function ItemList({artworks, onToggle}) {
     )
 }
 
+const checkList = [
+    {id: 0, title:'Spartacus', seen:false},
+    {id: 1, title:'Caligula', seen:false},
+    {id: 2, title:'Julius', seen:true},
+]
 
-export default function ArrayObject(){
+
+function ImmerList() {
+    const [myList, updateMyList] = useImmer(checkList);
+    const [yourList, updateYourList] = useImmer(checkList);
+
+
+    function handleToggleMyList(id, nextSeen) {
+        updateMyList(draft => {
+            const romans = draft.find(a => 
+                a.id === id
+                );
+
+                romans.seen = nextSeen
+        })
+    }
+
+    function handleToggleYourList(id, nextseen) {
+        updateYourList(draft => {
+            const romans = draft.find( a =>
+                a.id === id
+                );
+                romans.seen = nextseen
+        })
+    }
+
+
+    return(
+        <div className="immerList">
+            <h1>Updating the object within array with Immer</h1>
+            <h2>My list</h2>
+            <ItemList
+            artworks={myList}
+            onToggle={handleToggleMyList}
+            />
+            <h2>Your List</h2>
+            <ItemList
+            artworks={yourList}
+            onToggle={handleToggleYourList}
+            />
+        </div>
+    )
+
+
+
+}
+
+
+
+export default function ArrayState(){
     return (
         <div className="arrayObject">
             <List/>
@@ -321,6 +375,7 @@ export default function ArrayObject(){
             <InsList/>
             <ReverseList/>
             <BucketList/>
+            <ImmerList/>
         </div>
     )
 }
