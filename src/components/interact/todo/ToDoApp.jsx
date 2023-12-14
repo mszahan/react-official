@@ -15,6 +15,8 @@ export default function ToDoApp() {
 
     const [todos, setToDos] = useState(initialTodo)
     const [taskTitle, setTaskTitle] = useState('')
+    const [eTitle, setETitle] = useState('')
+
 
     function handleTitleChange(e) {
         setTaskTitle(e.target.value)
@@ -28,6 +30,16 @@ export default function ToDoApp() {
         }
     }
 
+    function handleEditTask(taskId) {
+        const updatedTodo = [
+            ...todos.slice(0, taskId),
+            {id: taskId, title:eTitle, complete:false},
+            ...todos.slice(taskId+1)
+        ]
+
+        setToDos(updatedTodo);
+    }
+
 
     return (
         <div className="todo-app">
@@ -39,6 +51,9 @@ export default function ToDoApp() {
             />
             <TaskList
             setToDos={setToDos}
+            onEdit={handleEditTask}
+            eTitle={eTitle}
+            setETitle={setETitle}
             todos={todos}/>
         </div>
     )

@@ -2,7 +2,7 @@ import { useState } from "react"
 
 
 
-export default function TaskList ( {todos, setToDos} ) {
+export default function TaskList ( {todos, setToDos, onEdit, eTitle, setETitle} ) {
 
     return (
 
@@ -13,6 +13,9 @@ export default function TaskList ( {todos, setToDos} ) {
                  setToDos={setToDos}
                  todos={todos}
                  key={t.id}
+                 onEdit={onEdit}
+                 eTitle={eTitle}
+                 setETitle={setETitle}
                  />
                 ))}
             </div>
@@ -20,7 +23,7 @@ export default function TaskList ( {todos, setToDos} ) {
 }
 
 
-function Task ({task, setToDos, todos }) {
+function Task ({task, setToDos, todos, onEdit, eTitle, setETitle }) {
     const [isEditing, setIsEditing] = useState(false)
 
     let todoContent;
@@ -30,12 +33,19 @@ function Task ({task, setToDos, todos }) {
             <>
             <input
             type="text"
-            value={task.title}
+            value={eTitle}
+            onChange={(e) => {
+
+                setETitle(e.target.value)
+            }}
             
             />
             {' '}
             <button
-            onClick={() => setIsEditing(false)}
+            onClick={() => {
+                setIsEditing(false)
+                onEdit(task.id)
+            }}
             >save</button>
             {' '}
             </>
@@ -45,11 +55,14 @@ function Task ({task, setToDos, todos }) {
             <>
                     <label htmlFor="">
                     <input type="checkbox" />
-                    {task.title} {task.id}
+                    {task.title}
                     </label>
                     {' '}
                     <button
-                    onClick={ () => setIsEditing(true)}
+                    onClick={ () => {
+                        setIsEditing(true)
+                        setETitle(task.title)
+                    }}
                     >Edit</button>
                     {' '}
             </>
