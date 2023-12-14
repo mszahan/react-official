@@ -21,9 +21,11 @@ export default function ToDoApp() {
     }
 
     function handleAddTask(){
-        const nextTodo = [...todos, {id:nId++, title:taskTitle, complete:false}]
-        setToDos(nextTodo);
-        setTaskTitle('');
+        if (taskTitle !=='') {
+            const nextTodo = [...todos, {id:nId++, title:taskTitle, complete:false}]
+            setToDos(nextTodo);
+            setTaskTitle('');
+        }
     }
 
 
