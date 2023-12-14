@@ -8,6 +8,7 @@ function Nav () {
                 <li> <Link to='/filter'> Filter </Link> </li>
                 <li> <Link to='/ui'> Ui </Link> </li>
                 <li> <Link to='/interact'> Interact </Link> </li>
+                <li> <Link to='/todo'> ToDo </Link> </li>
             </ul>
         </nav>
     )
