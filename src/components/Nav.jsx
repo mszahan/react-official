@@ -9,6 +9,7 @@ function Nav () {
                 <li> <Link to='/ui'> Ui </Link> </li>
                 <li> <Link to='/interact'> Interact </Link> </li>
                 <li> <Link to='/todo'> ToDo </Link> </li>
+                <li> <Link to='/state'> State </Link> </li>
             </ul>
         </nav>
     )
