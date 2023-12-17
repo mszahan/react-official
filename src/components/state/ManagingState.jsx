@@ -5,6 +5,7 @@ import TwoCounter from "./PreResetState"
 import { FacnyCounter } from "./PreResetState"
 import { SameCounterDiffPos } from "./PreResetState"
 import ChatRoom from "./ChatRoom"
+import Page from "./ContextHeading"
 
 
 export default function ManagingState() {
@@ -17,6 +18,7 @@ export default function ManagingState() {
             <FacnyCounter/>
             <SameCounterDiffPos/>
             <ChatRoom/>
+            <Page/>
         </div>
     )
 }
