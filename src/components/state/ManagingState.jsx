@@ -3,6 +3,7 @@ import Accordion from "./SharingState"
 import FilterableList from "./FilteringData"
 import TwoCounter from "./PreResetState"
 import { FacnyCounter } from "./PreResetState"
+import { SameCounterDiffPos } from "./PreResetState"
 
 
 export default function ManagingState() {
@@ -13,6 +14,7 @@ export default function ManagingState() {
             <FilterableList/>
             <TwoCounter/>
             <FacnyCounter/>
+            <SameCounterDiffPos/>
         </div>
     )
 }

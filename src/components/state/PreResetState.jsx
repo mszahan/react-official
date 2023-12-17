@@ -50,7 +50,49 @@ export function FacnyCounter() {
 }
 
 
-function Counter({isFancy}) {
+export function SameCounterDiffPos() {
+    const [isFancy, setIsFancy] = useState(false);
+
+    return (
+        <div className="fancyCounter">
+            <h1>Render the same component in same position with different two logic</h1>
+            <div className="counters">
+                {isFancy &&
+                <Counter
+                isFancy={true}
+                name={'Alex'}
+                />
+                }
+                  
+                {!isFancy &&
+                <Counter
+                name={'Rebecca'}
+                isFancy={false}/>
+                }
+
+                    {/* {isPlayerA ? (
+                            <Counter key="Taylor" person="Taylor" />
+                        ) : (
+                            <Counter key="Sarah" person="Sarah" />
+                        )}
+                                     */}
+
+            </div>
+            <label>
+                <input
+                checked={isFancy}
+                onChange={e => {setIsFancy(e.target.checked)}}
+                type="checkbox"
+                />
+
+                Use Fancy Styling
+            </label>
+        </div>
+    )
+}
+
+
+function Counter({isFancy, name}) {
     const [score, setScore] = useState(0);
     const [hover, setHover] = useState(false);
 
@@ -69,7 +111,8 @@ function Counter({isFancy}) {
         className={className}
         onPointerEnter={() => setHover(true)}
         onPointerLeave={() => setHover(false)}
-        >
+        >   
+            <h2>{name}</h2>
             <h1> {score} </h1>
             <button onClick={() => setScore(score+1)}>
                 Add one
