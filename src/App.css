@@ -103,3 +103,26 @@ body {
 .image img {
   border-radius: 10px;
 }
+
+.counters {
+  display: flex;
+  gap: 50px;
+  padding-bottom: 20px;
+}
+
+.counters .counter {
+  padding: 5px 20px;
+  border: 1px solid black;
+  text-align: center;
+}
+
+.counters .hover {
+  background-color: #124e5f;
+  color: white;
+  border: 5px solid #61dafb;
+}
+
+.counters .fancy {
+  border-radius: 10px;
+  border: 5px solid #739da8;
+}

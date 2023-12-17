@@ -1,6 +1,8 @@
 import Form from "./DeclaritiveUi"
 import Accordion from "./SharingState"
 import FilterableList from "./FilteringData"
+import TwoCounter from "./PreResetState"
+import { FacnyCounter } from "./PreResetState"
 
 
 export default function ManagingState() {
@@ -9,6 +11,8 @@ export default function ManagingState() {
             <Form/>
             <Accordion/>
             <FilterableList/>
+            <TwoCounter/>
+            <FacnyCounter/>
         </div>
     )
 }
