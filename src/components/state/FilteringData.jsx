@@ -34,12 +34,13 @@ const foods = [{
 
 export default function FilterableList() {
     const [query, setQurey] = useState('');
-    const [results, setResults] = useState(foods);
+    // const [results, setResults] = useState(foods);
+    const results = filterItems(foods, query)
 
     function handleChange(e) {
         setQurey(e.target.value);
-        const newResults = filterItems(foods, e.target.value)
-        setResults(newResults)
+        // const newResults = filterItems(foods, e.target.value)
+        // setResults(newResults)
     }
 
     return (
