@@ -4,6 +4,7 @@ import FilterableList from "./FilteringData"
 import TwoCounter from "./PreResetState"
 import { FacnyCounter } from "./PreResetState"
 import { SameCounterDiffPos } from "./PreResetState"
+import ChatRoom from "./ChatRoom"
 
 
 export default function ManagingState() {
@@ -15,6 +16,7 @@ export default function ManagingState() {
             <TwoCounter/>
             <FacnyCounter/>
             <SameCounterDiffPos/>
+            <ChatRoom/>
         </div>
     )
 }
