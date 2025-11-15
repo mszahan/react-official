@@ -1,18 +1,36 @@
-import { Link } from "react-router-dom";
+import { Link } from '@tanstack/react-router';
 
-function Nav () {
-    return (
-        <nav className="main-nav">
-            <ul>
-                <li> <Link to='/'> Home </Link> </li>
-                <li> <Link to='/filter'> Filter </Link> </li>
-                <li> <Link to='/ui'> Ui </Link> </li>
-                <li> <Link to='/interact'> Interact </Link> </li>
-                <li> <Link to='/todo'> ToDo </Link> </li>
-                <li> <Link to='/state'> State </Link> </li>
-            </ul>
-        </nav>
-    )
+function Nav() {
+  return (
+    <nav className="main-nav">
+      <ul>
+        <li>
+          {' '}
+          <Link to="/"> Home </Link>{' '}
+        </li>
+        <li>
+          {' '}
+          <Link to="/filter"> Filter </Link>{' '}
+        </li>
+        <li>
+          {' '}
+          <Link to="/ui"> Ui </Link>{' '}
+        </li>
+        <li>
+          {' '}
+          <Link to="/interact"> Interact </Link>{' '}
+        </li>
+        <li>
+          {' '}
+          <Link to="/todo"> ToDo </Link>{' '}
+        </li>
+        <li>
+          {' '}
+          <Link to="/state"> State </Link>{' '}
+        </li>
+      </ul>
+    </nav>
+  );
 }
 
 export default Nav;

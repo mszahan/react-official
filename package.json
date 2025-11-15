@@ -16,15 +16,16 @@
   "license": "ISC",
   "devDependencies": {
     "@vitejs/plugin-react": "^4.2.0",
+    "babel-plugin-react-compiler": "^1.0.0",
     "eslint": "^8.54.0",
     "eslint-config-prettier": "^9.0.0",
     "prettier": "^3.1.0",
     "vite": "^5.0.0"
   },
   "dependencies": {
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-router-dom": "^6.20.0",
-    "use-immer": "^0.9.0"
+    "@tanstack/react-router": "^1.136.4",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "use-immer": "^0.11.0"
   }
 }
